@@ -1,0 +1,11 @@
+@use 'styles/utils/mixins';
+
+.heading {
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 600;
+}
+
+.section {
+  padding: 2rem 0;
+}
