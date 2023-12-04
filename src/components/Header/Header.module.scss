@@ -1,0 +1,54 @@
+@use 'styles/utils/mixins';
+@use 'styles/utils/variables';
+
+.logo {
+  height: 50px;
+
+  @include mixins.mq(tablet) {
+    height: 70px;
+  }
+}
+
+.page-header {
+  @include mixins.flex(space-between);
+  flex-direction: row;
+  background-color: variables.get-color('white');
+  padding: 1rem;
+
+  @include mixins.mq(tablet) {
+    flex-direction: column;
+
+    gap: 1rem;
+    padding: 2rem 4rem;
+  }
+
+  @include mixins.mq(desktop) {
+    flex-direction: row;
+  }
+}
+
+.nav {
+  display: none;
+
+  @include mixins.mq(tablet) {
+    display: flex;
+    gap: 4rem;
+    margin: 0 auto;
+  }
+
+  @include mixins.mq(desktop) {
+    gap: 2rem;
+    margin: 0;
+  }
+}
+
+.menu-toggle {
+  font-size: 3rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  @include mixins.mq(tablet) {
+    display: none;
+  }
+}

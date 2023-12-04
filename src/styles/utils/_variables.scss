@@ -6,6 +6,7 @@ $colors: (
   'accent': #971700,
   'body': #eae6dd,
   'gray': #727272,
+  'white': #fff,
 );
 
 @function get-color($key) {
