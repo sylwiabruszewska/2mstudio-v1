@@ -1,0 +1,22 @@
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: get-color('body');
+}
+
+img {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
