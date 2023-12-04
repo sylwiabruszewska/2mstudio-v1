@@ -4,3 +4,4 @@ export * from './Header/Header';
 export * from './Address/Address';
 export * from './Footer/Footer';
 export * from './Section/Section';
+export * from './ListPros/ListPros';
