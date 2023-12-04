@@ -1,0 +1,21 @@
+@use 'styles/utils/mixins';
+
+.full {
+  width: 100%;
+}
+
+.wide {
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+
+  @include mixins.mq(tablet) {
+    width: 768px;
+    padding: 1rem 2rem;
+  }
+
+  @include mixins.mq(desktop) {
+    width: 1200px;
+  }
+}
