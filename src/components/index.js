@@ -5,3 +5,4 @@ export * from './Address/Address';
 export * from './Footer/Footer';
 export * from './Section/Section';
 export * from './ListPros/ListPros';
+export * from './SliderPortfolio/SliderPortfolio';

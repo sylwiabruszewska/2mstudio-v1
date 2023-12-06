@@ -1,0 +1,38 @@
+@use 'styles/utils/mixins';
+@import 'styles/utils/variables';
+
+.slider-img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+  @include mixins.mq(desktop) {
+    width: 400px;
+  }
+}
+
+.prev-arrow-custom,
+.next-arrow-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
+  &.prev-arrow-custom {
+    left: 20px;
+  }
+
+  &.next-arrow-custom {
+    right: 20px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: get-color('gray');
+  }
+}

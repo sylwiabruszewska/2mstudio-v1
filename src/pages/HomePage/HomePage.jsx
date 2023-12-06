@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 
 import styles from './HeroPage.module.scss';
-import { Container, Section, ListPros } from 'components';
+import { Container, Section, ListPros, SliderPortfolio } from 'components';
 import photo from 'assets/images/photo-home.jpg';
 
 const Home = () => {
@@ -45,12 +45,17 @@ const Home = () => {
         </div>
       </Container>
 
-      <Section>
+      <Section title=" ">
         <Container>
           <ListPros />
         </Container>
       </Section>
 
+      <Section title="Portfolio">
+        <Container type="full">
+          <SliderPortfolio />
+        </Container>
+      </Section>
       <p>Home</p>
     </>
   );
