@@ -1,10 +1,20 @@
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './HeroPage.module.scss';
-import { Container, Section, ListPros, SliderPortfolio } from 'components';
+import {
+  Container,
+  Section,
+  ListPros,
+  SliderPortfolio,
+  ListStages,
+  Button,
+} from 'components';
 import photo from 'assets/images/photo-home.jpg';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Helmet>
@@ -56,7 +66,24 @@ const Home = () => {
           <SliderPortfolio />
         </Container>
       </Section>
-      <p>Home</p>
+
+      <Section
+        title="Jak powstaje projekt?"
+        className={styles['stages-section']}
+      >
+        <div className={styles['stages-bg']}></div>
+        <Container className={styles['center']}>
+          <ListStages />
+
+          <Button
+            type="button"
+            className={styles.center}
+            onClick={() => navigate('/kontakt')}
+          >
+            Skontaktuj się z nami
+          </Button>
+        </Container>
+      </Section>
     </>
   );
 };

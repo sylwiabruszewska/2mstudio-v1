@@ -56,3 +56,32 @@
     }
   }
 }
+
+///// SEKCJA ETAPY /////
+.stages-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stages-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/stage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  //   filter: blur(20px);
+  z-index: -1;
+}
+
+///// COMMON STYLES /////
+.center {
+  display: inline-block;
+  text-align: center;
+}

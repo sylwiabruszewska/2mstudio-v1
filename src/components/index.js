@@ -6,3 +6,5 @@ export * from './Footer/Footer';
 export * from './Section/Section';
 export * from './ListPros/ListPros';
 export * from './SliderPortfolio/SliderPortfolio';
+export * from './Button/Button';
+export * from './ListStages/ListStages';
