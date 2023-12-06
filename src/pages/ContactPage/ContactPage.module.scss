@@ -1,0 +1,39 @@
+@use 'styles/utils/mixins';
+@import 'styles/utils/variables';
+
+.contact {
+  &__container {
+    background-color: get-color('white');
+    padding: 2rem;
+
+    @include mixins.flex(center);
+    flex-direction: column;
+    gap: 2rem;
+
+    @include mixins.mq(desktop) {
+      flex-direction: row;
+      padding: 2rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__box {
+    display: flex;
+    @include mixins.flex(center);
+
+    @include mixins.mq(desktop) {
+      width: 50%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include mixins.mq(tablet) {
+      width: 70%;
+    }
+  }
+}
