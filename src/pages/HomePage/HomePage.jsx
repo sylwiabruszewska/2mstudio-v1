@@ -9,6 +9,7 @@ import {
   SliderPortfolio,
   ListStages,
   Button,
+  ListTrust,
 } from 'components';
 import photo from 'assets/images/photo-home.jpg';
 
@@ -83,6 +84,10 @@ const Home = () => {
             Skontaktuj się z nami
           </Button>
         </Container>
+      </Section>
+
+      <Section title="Zaufali nam" className={styles['clients-section']}>
+        <ListTrust />
       </Section>
     </>
   );
