@@ -9,3 +9,4 @@ export * from './SliderPortfolio/SliderPortfolio';
 export * from './Button/Button';
 export * from './ListStages/ListStages';
 export * from './ListTrust/ListTrust';
+export * from './Loader/Loader';
