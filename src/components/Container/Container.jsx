@@ -8,7 +8,7 @@ export const Container = ({ children, className, type }) => {
 };
 
 Container.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   type: PropTypes.oneOf(['full', 'wide']),
 };
