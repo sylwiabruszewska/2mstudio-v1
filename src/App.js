@@ -33,8 +33,8 @@ export const App = () => {
         <Route path="projekty/" element={<PortfolioPage />}>
           <Route path="wnetrza" element={<Interiors />} />
           <Route path="budynki-mieszkalne" element={<BuildingsResidential />} />
-          <Route path="budynki-uslugowe" element={<BuildingsIndustrial />} />
-          <Route path="budynki-przemyslowe" element={<BuildingsCommercial />} />
+          <Route path="budynki-uslugowe" element={<BuildingsCommercial />} />
+          <Route path="budynki-przemyslowe" element={<BuildingsIndustrial />} />
         </Route>
 
         <Route path="o-nas" element={<AboutUsPage />} />
