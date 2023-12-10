@@ -18,7 +18,7 @@ export const SharedLayout = () => {
           <Header />
         </header>
         <main className={styles['page-main']}>
-          <Suspense fallback={'is loading'}>
+          <Suspense>
             <Outlet />
           </Suspense>
         </main>
