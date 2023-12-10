@@ -1,0 +1,33 @@
+@use 'styles/utils/mixins';
+@import 'styles/utils/variables';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: get-color('white');
+  padding: 2rem 4rem;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .content img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  div:has(> h3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
