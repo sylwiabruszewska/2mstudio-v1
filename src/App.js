@@ -5,6 +5,7 @@ import { SharedLayout } from './layout/SharedLayout';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const BlogPage = lazy(() => import('pages/BlogPage/BlogPage'));
+const PostDetails = lazy(() => import('pages/PostDetails/PostDetails'));
 const PortfolioPage = lazy(() => import('pages/PortfolioPage/PortfolioPage'));
 const Interiors = lazy(() => import('pages/ProjectsPages/Interiors'));
 const BuildingsResidential = lazy(() =>
@@ -29,6 +30,7 @@ export const App = () => {
 
         {/* Pozostałe trasy */}
         <Route path="blog" element={<BlogPage />} />
+        <Route path="/:postId" element={<PostDetails />} />
 
         <Route path="projekty/" element={<PortfolioPage />}>
           <Route path="wnetrza" element={<Interiors />} />
