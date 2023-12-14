@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
 
 export const Button = props => {
-  const { type = 'button', onClick, children } = props;
+  const { type = 'button', onClick, children, className } = props;
 
   return (
-    <button className={styles.button} type={type} onClick={onClick}>
+    <button
+      className={`${styles.button} ${className}`}
+      type={type}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -14,6 +18,7 @@ export const Button = props => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
