@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 
-import styles from './HeroPage.module.scss';
+import styles from './HomePage.module.scss';
 import {
   Container,
   Section,
