@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import styles from './BlogPage.module.scss';
-import { Section, Container } from 'components';
+import { Section, Container, Button } from 'components';
 import { getImages } from '../../helpers/getImages';
 import { getBlogPosts } from '../../services/api';
 import { setIsLoading } from '../../redux/global/globalSlice';
@@ -12,23 +12,39 @@ import { setIsLoading } from '../../redux/global/globalSlice';
 const BlogPage = () => {
   const [posts, setPosts] = useState();
   const [featuredImages, setFeaturedImages] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPageBlog, setLastPageBlog] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setIsLoading(true));
-    const fetchData = async () => {
-      try {
-        const data = await getBlogPosts();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        dispatch(setIsLoading(false));
-      }
-    };
-
     fetchData();
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage]);
+
+  const goToNextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage(prevPage => prevPage - 1);
+  };
+
+  const fetchData = async () => {
+    dispatch(setIsLoading(true));
+    try {
+      const { posts, lastPage } = await getBlogPosts(currentPage);
+
+      setPosts(posts);
+
+      if (lastPageBlog === null) {
+        setLastPageBlog(lastPage);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      dispatch(setIsLoading(false));
+    }
+  };
 
   useEffect(() => {
     getImages(posts, featuredImages, setFeaturedImages, getImages);
@@ -85,6 +101,22 @@ const BlogPage = () => {
                   </div>
                 </article>
               ))}
+          </div>
+          <div className={styles['btn-group']}>
+            <div>
+              {posts && currentPage > 1 && (
+                <Button className={styles['btn-pag']} onClick={goToPrevPage}>
+                  Poprzednia strona
+                </Button>
+              )}
+            </div>
+            <div>
+              {currentPage < lastPageBlog && posts && (
+                <Button className={styles['btn-pag']} onClick={goToNextPage}>
+                  Następna strona
+                </Button>
+              )}
+            </div>
           </div>
         </Container>
       </Section>
