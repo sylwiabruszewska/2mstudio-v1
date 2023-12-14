@@ -106,3 +106,17 @@
 
   transition: background-color 0.3s ease-out;
 }
+
+.btn-group {
+  @include mixins.flex(space-between, center);
+  padding: 1em 0;
+
+  & .btn-pag {
+    background-color: get-color('light');
+    color: get-color('dark');
+
+    &:hover {
+      color: get-color('primary');
+    }
+  }
+}
