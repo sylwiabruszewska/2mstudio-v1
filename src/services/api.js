@@ -27,9 +27,29 @@ export const getPost = async postId => {
   return post;
 };
 
-export const getBlogPosts = async () => {
-  const posts = await fetchData(API_PATHS.blog);
-  return posts;
+export const getBlogPosts = async (page, perPage = 6) => {
+  const apiUrl = `${API_PATHS.blog}&page=${page}&per_page=${perPage}`;
+  try {
+    const response = await axios.get(apiUrl, {
+      headers: {
+        accept: 'application/json',
+      },
+    });
+
+    if (response.status === 200) {
+      const totalPostsHeader = response.headers['x-wp-total'];
+      const posts = response.data;
+
+      const lastPage = Math.ceil(parseInt(totalPostsHeader) / perPage);
+
+      return { posts, lastPage };
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  } catch (error) {
+    console.error('An error occurred while fetching blog posts:', error);
+    throw error;
+  }
 };
 
 export const getPortfolioInterior = async () => {
