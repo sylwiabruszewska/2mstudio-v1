@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import styles from './BlogPage.module.scss';
@@ -15,18 +15,36 @@ const BlogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPageBlog, setLastPageBlog] = useState(null);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const page = parseInt(queryParams.get('page') || '1');
+    setCurrentPage(page);
+  }, [location]);
+
   const goToNextPage = () => {
-    setCurrentPage(prevPage => prevPage + 1);
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+    updateURL(nextPage);
   };
 
   const goToPrevPage = () => {
-    setCurrentPage(prevPage => prevPage - 1);
+    const prevPage = currentPage - 1;
+    setCurrentPage(prevPage);
+    updateURL(prevPage);
+  };
+
+  const updateURL = page => {
+    const queryParams = new URLSearchParams(location.search);
+    queryParams.set('page', page);
+    const newURL = `${location.pathname}?${queryParams.toString()}`;
+    window.history.pushState({}, '', newURL);
   };
 
   const fetchData = async () => {
