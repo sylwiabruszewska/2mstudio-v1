@@ -1,8 +1,8 @@
 {
-  "name": "2mstudio",
+  "name": "2mstudio-v1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sylwiabruszewska.github.io/2mstudio/",
+  "homepage": "https://sylwiabruszewska.github.io/2mstudio-v1/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
