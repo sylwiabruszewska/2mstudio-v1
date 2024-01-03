@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/2mstudio-v1/static/css/main.2e2ed25b.css",
-    "main.js": "/2mstudio-v1/static/js/main.1587e6e1.js",
+    "main.js": "/2mstudio-v1/static/js/main.4b2bd372.js",
     "static/css/156.12836425.chunk.css": "/2mstudio-v1/static/css/156.12836425.chunk.css",
     "static/js/156.438def2c.chunk.js": "/2mstudio-v1/static/js/156.438def2c.chunk.js",
     "static/css/285.12fd4172.chunk.css": "/2mstudio-v1/static/css/285.12fd4172.chunk.css",
@@ -41,7 +41,7 @@
     "static/media/revicons.woff": "/2mstudio-v1/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/2mstudio-v1/index.html",
     "main.2e2ed25b.css.map": "/2mstudio-v1/static/css/main.2e2ed25b.css.map",
-    "main.1587e6e1.js.map": "/2mstudio-v1/static/js/main.1587e6e1.js.map",
+    "main.4b2bd372.js.map": "/2mstudio-v1/static/js/main.4b2bd372.js.map",
     "156.12836425.chunk.css.map": "/2mstudio-v1/static/css/156.12836425.chunk.css.map",
     "156.438def2c.chunk.js.map": "/2mstudio-v1/static/js/156.438def2c.chunk.js.map",
     "285.12fd4172.chunk.css.map": "/2mstudio-v1/static/css/285.12fd4172.chunk.css.map",
@@ -70,6 +70,6 @@
   },
   "entrypoints": [
     "static/css/main.2e2ed25b.css",
-    "static/js/main.1587e6e1.js"
+    "static/js/main.4b2bd372.js"
   ]
 }
